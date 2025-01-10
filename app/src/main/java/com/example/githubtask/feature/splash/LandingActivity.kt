@@ -7,7 +7,7 @@ import android.os.Looper
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.githubtask.R
-import com.example.githubtask.feature.login.LoginActivity
+import com.example.githubtask.feature.login.view.LoginActivity
 
 class LandingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

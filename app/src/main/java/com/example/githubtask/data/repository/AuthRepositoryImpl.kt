@@ -1,0 +1,14 @@
+package com.example.githubtask.data.repository
+
+import com.example.githubtask.data.network.ApiState
+import com.example.githubtask.data.network.FirebaseAuthData
+
+class AuthRepositoryImpl(private val firebaseAuthData: FirebaseAuthData) : AuthRepository {
+    override suspend fun login(email: String, password: String): ApiState {
+        return firebaseAuthData.loginWithEmail(email, password)
+    }
+
+    override suspend fun googleLogin(idToken: String): ApiState {
+        return firebaseAuthData.loginWithGoogle(idToken)
+    }
+}
