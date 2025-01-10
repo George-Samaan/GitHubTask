@@ -13,7 +13,10 @@
         android:theme="@style/Theme.GitHubTask"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".feature.login.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".feature.splash.LandingActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
