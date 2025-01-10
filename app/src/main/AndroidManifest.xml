@@ -16,6 +16,9 @@
         android:theme="@style/Theme.GitHubTask"
         tools:targetApi="31">
         <activity
+            android:name=".feature.register.view.RegisterActivity"
+            android:exported="false" />
+        <activity
             android:name=".feature.login.view.LoginActivity"
             android:exported="false" />
         <activity

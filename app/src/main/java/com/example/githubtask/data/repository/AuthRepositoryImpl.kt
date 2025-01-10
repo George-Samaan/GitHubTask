@@ -11,4 +11,8 @@ class AuthRepositoryImpl(private val firebaseAuthData: FirebaseAuthData) : AuthR
     override suspend fun googleLogin(idToken: String): ApiState {
         return firebaseAuthData.loginWithGoogle(idToken)
     }
+
+    override suspend fun registerUser(email: String, password: String): ApiState {
+        return firebaseAuthData.registerUser(email, password)
+    }
 }
