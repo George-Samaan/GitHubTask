@@ -39,7 +39,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun handleRegisterButtonClick() {
-        val email = binding.emailLoginEditTetx.text.toString()
+        val email = binding.emailLoginEditText.text.toString()
         val password = binding.passwordLoginEditText.text.toString()
         val confirmPassword = binding.confirmPasswordRegisterEditText.text.toString()
 

@@ -47,13 +47,14 @@
             app:boxCornerRadiusBottomEnd="20dp"
             app:boxCornerRadiusTopStart="20dp"
             app:boxStrokeColor="@color/colorPrimary"
+            app:errorEnabled="true"
             app:hintTextColor="@color/colorPrimaryVariant"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/think_anim">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/emailLoginEditTetx"
+                android:id="@+id/emailLoginEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/email"
@@ -67,12 +68,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:hint="Password"
             app:boxCornerRadiusBottomEnd="20dp"
             app:boxCornerRadiusTopStart="20dp"
             app:boxStrokeColor="@color/colorPrimary"
             app:endIconMode="password_toggle"
+            app:errorEnabled="true"
             app:hintTextColor="@color/colorPrimaryVariant"
             app:layout_constraintTop_toBottomOf="@id/textField">
 
@@ -91,7 +93,6 @@
             android:id="@+id/autoLogin"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:layout_marginTop="8dp"
             android:text="Stay Signed in"
             android:textColor="@color/colorPrimaryVariant"
             android:textSize="14sp"

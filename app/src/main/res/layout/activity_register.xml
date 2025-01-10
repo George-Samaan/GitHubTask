@@ -55,7 +55,7 @@
             app:layout_constraintTop_toBottomOf="@+id/animationView2">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/emailLoginEditTetx"
+                android:id="@+id/emailLoginEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/email"
@@ -69,7 +69,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:hint="Password"
             app:boxCornerRadiusBottomEnd="20dp"
             app:boxCornerRadiusTopStart="20dp"
@@ -95,7 +95,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:hint="Confirm Password"
             app:boxCornerRadiusBottomEnd="20dp"
             app:boxCornerRadiusTopStart="20dp"
