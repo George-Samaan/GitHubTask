@@ -1,7 +1,6 @@
 package com.example.githubtask.data.network.remote
 
 import com.example.githubtask.utils.Constants.BASE_URL
-import com.example.githubtask.utils.Constants.TOKEN
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -12,7 +11,6 @@ object RetrofitClient {
             .addInterceptor { chain ->
                 val request = chain.request()
                     .newBuilder()
-                    .addHeader("Authorization", "Bearer $TOKEN")
                     .build()
                 chain.proceed(request)
             }
