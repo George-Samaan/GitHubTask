@@ -6,6 +6,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.githubtask.R
@@ -34,8 +35,8 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
+        enableEdgeToEdge()
         setContentView(binding.root)
-
         initViewModel()
         initGoogleSignInClient()
         observeLoginState()
@@ -124,7 +125,7 @@ class LoginActivity : AppCompatActivity() {
             viewModel.loginState.collect { state ->
                 when (state) {
                     is ApiState.Loading -> {}
-                    is ApiState.Success -> navigateToHomeScreen()
+                    is ApiState.Success<*> -> navigateToHomeScreen()
                     is ApiState.Failure -> showError(state.message)
                 }
             }
