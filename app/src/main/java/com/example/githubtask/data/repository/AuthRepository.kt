@@ -1,6 +1,6 @@
 package com.example.githubtask.data.repository
 
-import com.example.githubtask.data.network.ApiState
+import com.example.githubtask.data.network.remote.ApiState
 
 interface AuthRepository {
     suspend fun login(email: String, password: String): ApiState

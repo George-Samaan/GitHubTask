@@ -1,7 +1,7 @@
 package com.example.githubtask.data.repository
 
-import com.example.githubtask.data.network.ApiState
 import com.example.githubtask.data.network.FirebaseAuthData
+import com.example.githubtask.data.network.remote.ApiState
 
 class AuthRepositoryImpl(private val firebaseAuthData: FirebaseAuthData) : AuthRepository {
     override suspend fun login(email: String, password: String): ApiState {

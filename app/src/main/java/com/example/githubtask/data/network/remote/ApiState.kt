@@ -1,4 +1,4 @@
-package com.example.githubtask.data.network
+package com.example.githubtask.data.network.remote
 
 sealed class ApiState {
     class Success<T>(val data: T) : ApiState()

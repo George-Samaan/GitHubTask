@@ -9,8 +9,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.githubtask.R
-import com.example.githubtask.data.network.ApiState
 import com.example.githubtask.data.network.FirebaseAuthDataImpl
+import com.example.githubtask.data.network.remote.ApiState
 import com.example.githubtask.data.repository.AuthRepositoryImpl
 import com.example.githubtask.databinding.ActivityLoginBinding
 import com.example.githubtask.feature.home.view.HomeActivity

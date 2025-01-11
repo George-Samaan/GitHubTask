@@ -1,6 +1,6 @@
 package com.example.githubtask.data.repository
 
-import com.example.githubtask.data.network.ApiState
+import com.example.githubtask.data.network.remote.ApiState
 
 interface GithubRepository {
     suspend fun getPublicRepositories(since: Int, perPage: Int): ApiState

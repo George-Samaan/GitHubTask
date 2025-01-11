@@ -14,8 +14,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.githubtask.data.model.Repository
-import com.example.githubtask.data.network.ApiState
-import com.example.githubtask.data.network.RetrofitClient
+import com.example.githubtask.data.network.remote.ApiState
+import com.example.githubtask.data.network.remote.RetrofitClient
 import com.example.githubtask.data.repository.GithubRepositoryImpl
 import com.example.githubtask.databinding.ActivityHomeBinding
 import com.example.githubtask.feature.home.viewModel.HomeViewModel

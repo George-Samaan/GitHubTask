@@ -1,4 +1,4 @@
-package com.example.githubtask.data.network
+package com.example.githubtask.data.network.remote
 
 import com.example.githubtask.data.model.Repository
 import com.example.githubtask.data.model.SearchResponse

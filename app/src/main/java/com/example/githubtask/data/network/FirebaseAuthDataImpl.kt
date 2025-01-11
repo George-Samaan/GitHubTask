@@ -1,5 +1,6 @@
 package com.example.githubtask.data.network
 
+import com.example.githubtask.data.network.remote.ApiState
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.coroutines.tasks.await

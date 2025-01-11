@@ -1,7 +1,7 @@
 package com.example.githubtask.data.repository
 
-import com.example.githubtask.data.network.ApiState
-import com.example.githubtask.data.network.GitHubApiService
+import com.example.githubtask.data.network.remote.ApiState
+import com.example.githubtask.data.network.remote.GitHubApiService
 
 class GithubRepositoryImpl(private val gitHubApiService: GitHubApiService) : GithubRepository {
     override suspend fun getPublicRepositories(since: Int, perPage: Int): ApiState {

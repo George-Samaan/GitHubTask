@@ -2,7 +2,7 @@ package com.example.githubtask.feature.home.viewModel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.githubtask.data.network.ApiState
+import com.example.githubtask.data.network.remote.ApiState
 import com.example.githubtask.data.repository.GithubRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch

@@ -1,4 +1,4 @@
-package com.example.githubtask.data.network
+package com.example.githubtask.data.network.remote
 
 import com.example.githubtask.utils.Constants.BASE_URL
 import com.example.githubtask.utils.Constants.TOKEN
