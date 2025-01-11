@@ -1,18 +1,28 @@
 package com.example.githubtask.data.network
 
 import com.example.githubtask.utils.Constants.BASE_URL
+import com.example.githubtask.utils.Constants.TOKEN
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
-    private val retrofit by lazy {
+    val api: GitHubApiService by lazy {
+        val client = OkHttpClient.Builder()
+            .addInterceptor { chain ->
+                val request = chain.request()
+                    .newBuilder()
+                    .addHeader("Authorization", "Bearer $TOKEN")
+                    .build()
+                chain.proceed(request)
+            }
+            .build()
+
         Retrofit.Builder()
             .baseUrl(BASE_URL)
+            .client(client)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-    }
-
-    val api: GitHubApiService by lazy {
-        retrofit.create(GitHubApiService::class.java)
+            .create(GitHubApiService::class.java)
     }
 }

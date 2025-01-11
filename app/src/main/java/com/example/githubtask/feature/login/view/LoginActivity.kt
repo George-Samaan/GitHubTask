@@ -124,7 +124,7 @@ class LoginActivity : AppCompatActivity() {
             viewModel.loginState.collect { state ->
                 when (state) {
                     is ApiState.Loading -> {}
-                    is ApiState.Success -> navigateToHomeScreen()
+                    is ApiState.Success<*> -> navigateToHomeScreen()
                     is ApiState.Failure -> showError(state.message)
                 }
             }

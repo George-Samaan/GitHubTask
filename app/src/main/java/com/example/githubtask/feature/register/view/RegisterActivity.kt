@@ -58,7 +58,7 @@ class RegisterActivity : AppCompatActivity() {
             registerViewModel.registerState.collect { state ->
                 when (state) {
                     is ApiState.Loading -> {}
-                    is ApiState.Success -> handleSuccessState()
+                    is ApiState.Success<*> -> handleSuccessState()
                     is ApiState.Failure -> handleErrorState(state.message, state.field)
                 }
             }

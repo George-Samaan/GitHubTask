@@ -11,10 +11,23 @@ class HomeViewModel(private val gitHubRepo: GithubRepository) : ViewModel() {
     private val _repositories = MutableStateFlow<ApiState>(ApiState.Loading)
     val repositories: MutableStateFlow<ApiState> = _repositories
 
-    fun fetchRepositories(since: Int, perPage: Int) {
+    private var currentPage = 0
+
+    fun fetchRepositories(since: Int = currentPage, perPage: Int) {
         viewModelScope.launch {
             _repositories.value = ApiState.Loading
-            _repositories.value = gitHubRepo.getPublicRepositories(since, perPage)
+            when (val result = gitHubRepo.getPublicRepositories(since, perPage)) {
+                is ApiState.Success<*> -> {
+                    _repositories.value = ApiState.Success(result.data)
+                    currentPage = since + perPage
+                }
+
+                is ApiState.Failure -> {
+                    _repositories.value = ApiState.Failure(result.message)
+                }
+
+                else -> {}
+            }
         }
     }
 }

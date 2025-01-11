@@ -14,8 +14,15 @@ import com.bumptech.glide.Glide
 import com.example.githubtask.R
 import com.example.githubtask.data.model.Repository
 
-class RepositoryAdapter(private val repositories: List<Repository>) :
+class RepositoryAdapter(private var repositories: MutableList<Repository>) :
     RecyclerView.Adapter<RepositoryAdapter.RepositoryViewHolder>() {
+
+    fun addRepositories(newRepositories: List<Repository>) {
+        val startIndex = repositories.size
+        repositories.addAll(newRepositories)
+        notifyItemRangeInserted(startIndex, newRepositories.size)
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepositoryViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.card_item, parent, false)
         return RepositoryViewHolder(view)
