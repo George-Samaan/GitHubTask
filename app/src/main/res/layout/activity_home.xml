@@ -22,7 +22,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:queryBackground="@android:color/transparent"
-        app:queryHint="Search repositories..."
+        app:queryHint="@string/search_repositories"
         app:searchIcon="@drawable/search"
         app:submitBackground="@android:color/transparent" />
 

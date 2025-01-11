@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Main Content (Important Info) -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -20,7 +19,6 @@
             android:orientation="horizontal"
             android:padding="16dp">
 
-            <!-- Owner Avatar -->
             <ImageView
                 android:id="@+id/ownerAvatar"
                 android:layout_width="50dp"
@@ -29,7 +27,6 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_launcher_foreground" />
 
-            <!-- Repository Name and Owner -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -41,7 +38,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="4dp"
-                    android:text="Repository Name"
+                    android:text="@string/repository_name"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="@android:color/black" />
 
@@ -49,12 +46,11 @@
                     android:id="@+id/ownerName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Owner Name"
+                    android:text="@string/owner_name"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textColor="@android:color/darker_gray" />
             </LinearLayout>
 
-            <!-- Expand/Collapse Button -->
             <Button
                 android:id="@+id/expandButton"
                 android:layout_width="wrap_content"
@@ -66,7 +62,6 @@
                 android:textColor="@color/black" />
         </LinearLayout>
 
-        <!-- Expanded Content (Hidden by Default) -->
         <LinearLayout
             android:id="@+id/expandedContent"
             android:layout_width="match_parent"
@@ -75,7 +70,6 @@
             android:padding="16dp"
             android:visibility="gone">
 
-            <!-- Repository Description -->
             <TextView
                 android:id="@+id/repoDescription"
                 android:layout_width="match_parent"
@@ -84,7 +78,6 @@
                 android:text="Repository description goes here."
                 android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
-            <!-- Repository URL -->
             <TextView
                 android:id="@+id/repoUrl"
                 android:layout_width="match_parent"

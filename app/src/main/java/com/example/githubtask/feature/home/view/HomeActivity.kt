@@ -5,7 +5,6 @@ import android.content.Intent
 import android.net.ConnectivityManager
 import android.os.Bundle
 import android.provider.Settings
-import android.util.Log
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
@@ -20,6 +19,7 @@ import com.example.githubtask.data.network.RetrofitClient
 import com.example.githubtask.data.repository.GithubRepositoryImpl
 import com.example.githubtask.databinding.ActivityHomeBinding
 import com.example.githubtask.feature.home.viewModel.HomeViewModel
+import com.example.githubtask.utils.Constants.REQUEST_CODE_WIFI
 import kotlinx.coroutines.launch
 
 @Suppress("UNCHECKED_CAST", "DEPRECATION")
@@ -72,7 +72,6 @@ class HomeActivity : AppCompatActivity() {
             homeViewModel.repositories.collect { state ->
                 when (state) {
                     is ApiState.Loading -> {
-                        Log.d("HomeActivity", "Loading...")
                         showLoading(true)
                     }
 
@@ -83,7 +82,6 @@ class HomeActivity : AppCompatActivity() {
 
                     is ApiState.Failure -> {
                         showLoading(false)
-                        Log.d("HomeActivity", "Failure: ${state.message}")
                         handleError(message = state.message)
                     }
                 }
@@ -97,21 +95,18 @@ class HomeActivity : AppCompatActivity() {
             homeViewModel.searchResults.collect { state ->
                 when (state) {
                     is ApiState.Loading -> {
-                        Log.d("Search", "Searching ...")
                         showLoading(true)
                     }
 
                     is ApiState.Success<*> -> {
                         showLoading(false)
                         if (state.data is List<*>) {
-                            Log.d("Search", "Success ${state.data}")
                             repositoryAdapter.setRepositories(state.data as List<Repository>)
                         }
                     }
 
                     is ApiState.Failure -> {
                         showLoading(false)
-                        Log.d("Search", "Failure: ${state.message}")
                         handleError(message = state.message)
                     }
                 }
@@ -124,7 +119,6 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun handleSuccess(state: ApiState.Success<*>) {
-        Log.d("HomeActivity", "Success: ${state.data}")
         if (state.data is List<*>) {
             @Suppress("UNCHECKED_CAST")
             repositoryAdapter.addRepositories(state.data as List<Repository>)
@@ -169,14 +163,9 @@ class HomeActivity : AppCompatActivity() {
                 activeNetwork?.type == ConnectivityManager.TYPE_WIFI && activeNetwork.isConnected
 
             if (isWifiConnected) {
-                // Retry the fetch operation if Wi-Fi is now connected
                 homeViewModel.fetchRepositories(perPage = perPage)
             }
         }
-    }
-
-    companion object {
-        private const val REQUEST_CODE_WIFI = 1001
     }
 
     private fun setupRecyclerView() {
