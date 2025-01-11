@@ -62,6 +62,17 @@ class RepositoryAdapter(private var repositories: MutableList<Repository>) :
 
     override fun getItemCount(): Int = repositories.size
 
+    fun setRepositories(repositories: List<Repository>) {
+        this.repositories.clear()
+        this.repositories.addAll(repositories)
+        notifyDataSetChanged()
+    }
+
+    fun clearRepositories() {
+        repositories.clear()
+        notifyDataSetChanged()
+    }
+
     class RepositoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val repoName: TextView = itemView.findViewById(R.id.repoName)
         val ownerName: TextView = itemView.findViewById(R.id.ownerName)

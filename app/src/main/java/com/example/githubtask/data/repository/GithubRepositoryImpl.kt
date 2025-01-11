@@ -12,4 +12,19 @@ class GithubRepositoryImpl(private val gitHubApiService: GitHubApiService) : Git
             ApiState.Failure(e.localizedMessage ?: "Error fetching repositories")
         }
     }
+
+    override suspend fun searchRepositories(query: String, perPage: Int, page: Int): ApiState {
+        return try {
+            val response = gitHubApiService.searchRepositories(query, perPage, page)
+            if (response.isSuccessful) {
+                response.body()?.let {
+                    ApiState.Success(it.items)
+                } ?: ApiState.Failure("No repositories found")
+            } else {
+                ApiState.Failure("Error: ${response.code()}")
+            }
+        } catch (e: Exception) {
+            ApiState.Failure(e.localizedMessage ?: "Error fetching repositories")
+        }
+    }
 }

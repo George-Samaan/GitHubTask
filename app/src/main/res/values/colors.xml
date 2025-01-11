@@ -17,14 +17,4 @@
     <!-- Accent Colors -->
     <color name="colorAccent1">#FFA07A</color> <!-- Light Coral -->
     <color name="colorAccent2">#800000</color> <!-- Maroon -->
-
-    <!-- Alert Colors -->
-    <color name="colorSuccess">#4CAF50</color> <!-- Green for success -->
-    <color name="colorWarning">#FFC107</color> <!-- Yellow for warnings -->
-    <color name="colorError">#FF5722</color> <!-- Deep Orange for errors -->
-
-    <!-- Special Use Colors -->
-    <color name="colorFavorite">#FF0000</color> <!-- Red for favorite -->
-    <color name="colorNonFavorite">#B0B0B0</color> <!-- Gray for non-favorite -->
-
 </resources>
